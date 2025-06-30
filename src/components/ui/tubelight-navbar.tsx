@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { DivideIcon as LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface NavItem {
   name: string
   url: string
-  icon: LucideIcon
+  icon: React.ComponentType<{ size?: number; strokeWidth?: number }>
 }
 
 interface NavBarProps {
@@ -15,12 +14,13 @@ interface NavBarProps {
 }
 
 export function NavBar({ items, className }: NavBarProps) {
-  const [activeTab, setActiveTab] = useState(items[0].name)
-  const [isMobile, setIsMobile] = useState(false)
+  const [activeTab, setActiveTab] = useState(items[0]?.name ?? "")
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
+      // You may re-enable setIsMobile if you use it later
+      // const mobile = window.innerWidth < 768
+      // setIsMobile(mobile)
     }
 
     handleResize()

@@ -20,8 +20,6 @@ export function Header() {
             <LockLogo />
           </a>
 
-          <NavBar items={navItems} />
-
           <div className="flex items-center gap-3 shrink-0">
             <GoogleAuthButton />
             <Button size="sm" className="gap-1 bg-green-600 hover:bg-green-500">
