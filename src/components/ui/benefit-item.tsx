@@ -1,7 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import * as LucideIcons from 'lucide-react';
-import { DivideIcon as LucideIcon } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { fadeIn } from '@/lib/animations';
 
 interface BenefitItemProps {
@@ -17,8 +16,8 @@ export function BenefitItem({
   icon,
   index,
 }: BenefitItemProps) {
-  // Dynamically get the icon from Lucide
-  const IconComponent = (LucideIcons as Record<string, LucideIcon>)[icon] || LucideIcons.CircleHelp;
+  const MaybeIcon = LucideIcons[icon as keyof typeof LucideIcons];
+  const IconComponent: LucideIcon = (MaybeIcon ?? LucideIcons.CircleHelp) as LucideIcon;
 
   return (
     <motion.div

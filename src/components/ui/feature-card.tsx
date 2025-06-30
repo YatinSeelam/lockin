@@ -1,9 +1,8 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { DivideIcon as LucideIcon } from 'lucide-react';
 import { cardHover } from '@/lib/animations';
 import * as LucideIcons from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface FeatureCardProps {
@@ -21,9 +20,10 @@ export function FeatureCard({
   index,
   className,
 }: FeatureCardProps) {
-  // Dynamically get the icon from Lucide
-  const IconComponent = (LucideIcons as Record<string, LucideIcon>)[icon] || LucideIcons.CircleHelp;
-  
+  // Safe dynamic icon access
+  const MaybeIcon = LucideIcons[icon as keyof typeof LucideIcons];
+  const IconComponent: LucideIcon = (MaybeIcon ?? LucideIcons.CircleHelp) as LucideIcon;
+
   return (
     <motion.div
       className={cn('h-full', className)}

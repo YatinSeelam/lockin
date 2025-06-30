@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/ui/section-header';
 import { TestimonialCard } from '@/components/ui/testimonial-card';
@@ -9,14 +8,14 @@ export function TestimonialsSection() {
   return (
     <section id="testimonials" className="relative py-20 overflow-hidden">
       <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 bg-green-500/5 rounded-full blur-3xl -z-10" />
-      
+
       <div className="container px-4 mx-auto">
         <SectionHeader
           title="User Testimonials"
           subtitle="Hear from professionals who have transformed their workday with LockIn."
           centered
         />
-        
+
         <motion.div
           variants={staggerContainer(0.1)}
           initial="hidden"

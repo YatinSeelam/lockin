@@ -1,4 +1,3 @@
-import React from 'react';
 import { Download, Home, User, Briefcase, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { NavBar } from '@/components/ui/tubelight-navbar';

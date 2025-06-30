@@ -1,9 +1,8 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/ui/section-header';
 import { Badge } from '@/components/ui/badge';
 import { Activity, CheckCircle, Clock, EyeOff } from 'lucide-react';
-import { fadeIn, pulseAnimation } from '@/lib/animations';
+import { fadeIn } from '@/lib/animations';
 
 export function PreviewSection() {
   return (
@@ -41,7 +40,6 @@ export function PreviewSection() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <motion.div
                     className="relative"
-                    variants={pulseAnimation}
                     initial="initial"
                     animate="animate"
                   >
@@ -50,7 +48,7 @@ export function PreviewSection() {
 
                     {/* Eye tracking */}
                     <div className="absolute top-1/3 left-1/3 transform -translate-x-1/2 w-6 h-6">
-                      <motion.div 
+                      <motion.div
                         className="w-full h-full rounded-full border border-green-500"
                         animate={{
                           scale: [1, 1.2, 1],
@@ -64,7 +62,7 @@ export function PreviewSection() {
                     </div>
 
                     <div className="absolute top-1/3 right-0 transform -translate-x-1/2 w-6 h-6">
-                      <motion.div 
+                      <motion.div
                         className="w-full h-full rounded-full border border-green-500"
                         animate={{
                           scale: [1, 1.2, 1],
@@ -102,7 +100,7 @@ export function PreviewSection() {
               {/* Stats panel */}
               <div className="md:col-span-2 rounded-lg border border-neutral-800 bg-neutral-950/50 p-4 flex flex-col">
                 <h3 className="text-sm font-medium mb-4 text-neutral-300">Session Stats</h3>
-                
+
                 <div className="grid grid-cols-2 gap-3">
                   <div className="bg-neutral-900 rounded-md p-3">
                     <div className="flex items-center gap-2 mb-1.5">
@@ -119,7 +117,7 @@ export function PreviewSection() {
                     </div>
                     <p className="text-xl font-mono text-white">87%</p>
                   </div>
-                  
+
                   <div className="bg-neutral-900 rounded-md p-3">
                     <div className="flex items-center gap-2 mb-1.5">
                       <EyeOff className="w-4 h-4 text-green-500" />
@@ -140,7 +138,7 @@ export function PreviewSection() {
                 <div className="mt-auto pt-4">
                   <div className="text-xs text-neutral-500 mb-1.5">Focus Level</div>
                   <div className="h-2 w-full bg-neutral-800 rounded-full overflow-hidden">
-                    <motion.div 
+                    <motion.div
                       className="h-full bg-green-500 rounded-full"
                       initial={{ width: "70%" }}
                       animate={{ width: ["70%", "90%", "65%", "85%", "75%"] }}

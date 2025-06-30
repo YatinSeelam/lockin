@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/ui/section-header';
 import { BenefitItem } from '@/components/ui/benefit-item';
@@ -11,7 +10,7 @@ export function BenefitsSection() {
   return (
     <section id="benefits" className="relative py-20 overflow-hidden">
       <div className="absolute bottom-0 left-1/3 w-1/3 h-1/3 bg-green-500/5 rounded-full blur-3xl -z-10" />
-      
+
       <div className="container px-4 mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -19,7 +18,7 @@ export function BenefitsSection() {
               title="User Benefits"
               subtitle="Experience a new level of productivity with features designed to help you achieve more while protecting your wellbeing."
             />
-            
+
             <motion.div
               variants={staggerContainer(0.1)}
               initial="hidden"
@@ -37,7 +36,7 @@ export function BenefitsSection() {
                 />
               ))}
             </motion.div>
-            
+
             <motion.div
               className="mt-12"
               initial={{ opacity: 0, y: 20 }}
@@ -51,7 +50,7 @@ export function BenefitsSection() {
               </Button>
             </motion.div>
           </div>
-          
+
           <motion.div
             className="relative"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -64,27 +63,27 @@ export function BenefitsSection() {
                 {/* Graph Background */}
                 <div className="absolute inset-0 opacity-20">
                   {Array.from({ length: 10 }).map((_, i) => (
-                    <div 
-                      key={i} 
-                      className="border-t border-green-500/10" 
+                    <div
+                      key={i}
+                      className="border-t border-green-500/10"
                       style={{ top: `${i * 10}%` }}
                     />
                   ))}
                   {Array.from({ length: 10 }).map((_, i) => (
-                    <div 
-                      key={i} 
-                      className="border-l border-green-500/10 absolute top-0 bottom-0" 
+                    <div
+                      key={i}
+                      className="border-l border-green-500/10 absolute top-0 bottom-0"
                       style={{ left: `${i * 10}%` }}
                     />
                   ))}
                 </div>
-                
+
                 {/* Productivity Chart */}
                 <div className="absolute bottom-4 left-4 right-4 top-4 flex flex-col">
                   <div className="mb-4 text-center">
                     <h3 className="text-lg font-semibold text-green-400">Weekly Focus Report</h3>
                   </div>
-                  
+
                   <div className="flex-grow relative">
                     <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                       <motion.path
@@ -103,7 +102,7 @@ export function BenefitsSection() {
                         animate={{ pathLength: 1 }}
                         transition={{ duration: 1.5, ease: "easeInOut" }}
                       />
-                      
+
                       {/* Points on the line */}
                       {[
                         [0, 80],
@@ -123,7 +122,7 @@ export function BenefitsSection() {
                         />
                       ))}
                     </svg>
-                    
+
                     <div className="absolute bottom-0 left-0 right-0 flex justify-between text-xs text-neutral-500 px-2">
                       <span>Mon</span>
                       <span>Tue</span>
@@ -132,7 +131,7 @@ export function BenefitsSection() {
                       <span>Fri</span>
                     </div>
                   </div>
-                  
+
                   <div className="mt-4 grid grid-cols-2 gap-2">
                     <div className="bg-neutral-900/80 rounded-md p-2 text-center">
                       <div className="text-xs text-neutral-500">Focus Time</div>
@@ -146,7 +145,7 @@ export function BenefitsSection() {
                 </div>
               </div>
             </div>
-            
+
             {/* Floating badge */}
             <div className="absolute -top-6 -right-6 bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg transform rotate-12">
               Real results
